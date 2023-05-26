@@ -1,38 +1,5 @@
-# create-svelte
+# MeowGPT
+Welcome to MeowGPT, your friendly, slightly sassy, and undeniably lovable AI cat chatbot. Inspired by the likes of Garfield and the Cheshire Cat, this guy brings a humorous and entertaining approach to interacting with an AI.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+![Screenshot 2023-05-25 183506](https://github.com/Sa1D1111/meowGpt/assets/87517930/4ba26486-fb8f-4507-98a8-41e8fb38f1f8)
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
