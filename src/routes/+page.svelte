@@ -62,12 +62,19 @@
 	}
 </script>
 
+
+<style>
+	.chat-box {
+		background-color: rgb(1, 247, 185);
+	}
+</style>
+
 <div class="flex flex-col pt-4 w-full px-8 items-center gap-2">
 	<div>
-		<h1 class="text-2xl font-bold w-full text-center">Chatty</h1>
-		<p class="text-sm italic">Powered by gpt-3.5-turbo</p>
+		<h1 class="text-2xl font-bold w-full text-center text-black">MeowGPT</h1>
+		<p class="text-sm italic text-black">Powered by gpt-3.5-turbo</p>
 	</div>
-	<div class="h-[500px] w-full bg-gray-900 rounded-md p-4 overflow-y-auto flex flex-col gap-4">
+	<div class="h-[500px] w-full bg-gray-900 rounded-md p-4 overflow-y-auto flex flex-col gap-4 chat-box">
 		<div class="flex flex-col gap-2">
 			<ChatMessage type="assistant" message="meeeeaaaaow can i do for you?" />
 			{#each chatMessages as message}
@@ -87,6 +94,6 @@
 		on:submit|preventDefault={() => handleSubmit()}
 	>
 		<input type="text" class="input input-bordered w-full bg-slate-800" bind:value={query} />
-		<button type="submit" class="btn bg-blue-700 hover:bg-slate-800 text-white"> Send </button>
+		<button type="submit" class="btn bg-blue-700 hover:bg-slate-800"> Send </button>
 	</form>
 </div>
