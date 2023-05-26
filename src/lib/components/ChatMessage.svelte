@@ -13,15 +13,15 @@
 			/>
 		</div>
 	</div>
-	<!-- <div class="chat-header">
+	<div class="chat-header">
 		{type === 'user' ? 'Me' : 'Bot'}
 	</div>
 	<div class="chat-bubble {type === 'user' ? 'chat-bubble-primary' : 'chat-bubble-secondary'}">
 		{message}
-	</div> -->
-	<div class="chat-bubble {type === 'user' ? 'chat-bubble-primary' : 'chat-bubble-secondary'}">
-		{message}
 	</div>
+	<!-- <div class="chat-bubble {type === 'user' ? 'chat-bubble-primary' : 'chat-bubble-secondary'}">
+		{message}
+	</div> -->
 </div>
 
 
