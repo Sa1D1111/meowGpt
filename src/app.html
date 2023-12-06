@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -9,19 +6,7 @@
 		<meta name="viewport" content="width=device-width" />
 		%sveltekit.head%
 		<style>
-			body {
-				position: relative;
-				overflow: hidden;
-				background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8b00ff, #ff00ff);
-				background-size: 400% 400%;
-				animation: glowingBackground 10s ease infinite;
-			}
-
-			@keyframes glowingBackground {
-				0% { background-position: 0% 50%; }
-				50% { background-position: 100% 50%; }
-				100% { background-position: 0% 50%; }
-			}
+			
 
 			@keyframes fallingCats {
 				0% {
@@ -33,11 +18,30 @@
 			}
 
 
+
+			body {
+				background: linear-gradient(45deg, #6abdec, #f8e2a0, #ed9092, #63f189, #7e7ef3);
+				background-size: 400% 400%;
+				animation: glowingBackground 10s ease infinite; /* Reduced from 15s to 10s for a faster animation */
+
+				position: relative;
+				overflow-x: hidden; /* Prevent horizontal scrolling */
+				overflow-y: hidden; /* Prevent vertical scrolling */
+				margin: 0; /* Remove default margin */
+			}
+			
+			@keyframes glowingBackground {
+				0% { background-position: 0% 50%; }
+				50% { background-position: 100% 50%; }
+				100% { background-position: 0% 50%; }
+			}
+
+
 			#toggle-button {
 				font-size: 20px;
 				padding: 15px 30px;
-				background-color: #4CAF50;
-				color: white;
+				background-color: #f5e9c6; /* A brighter shade */
+				color: rgb(129, 118, 118);
 				border: none;
 				border-radius: 50px;
 				cursor: pointer;
@@ -46,18 +50,18 @@
 				bottom: 20px;
 				right: 20px;
 				z-index: 10;
-				box-shadow: 0px 5px 15px rgba(0,0,0,0.3); /* Give a shadow effect */
+				box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
 			}
-			
+	
 			#toggle-button:hover {
-				background-color: #45a049;
-				transform: translateY(-2px); /* Slightly lift the button on hover */
-				box-shadow: 0px 7px 20px rgba(0,0,0,0.5); /* Enhance shadow on hover */
+				background-color: #fab7b8; /* A brighter shade for hover state */
+				transform: translateY(-2px);
+				box-shadow: 0px 7px 20px rgba(0,0,0,0.5);
 			}
-			
+	
 			#toggle-button:active {
-				transform: translateY(1px); /* Push the button down on click */
-				box-shadow: 0px 3px 10px rgba(0,0,0,0.3); /* Reduce shadow on click */
+				transform: translateY(1px);
+				box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
 			}
 
 			
@@ -66,9 +70,17 @@
 			.cat-mid {
 				position: absolute;
 				top: -100px;
-				left: calc(50% - 50px);
+				left: calc(30% - 50px);
 				width: 100px;
 				animation: fallingCats 10s linear infinite;
+			}
+
+			.cat-right-mid {
+				position: absolute;
+				top: -100px;
+				left: calc(69.23% - 50px);
+				width: 100px;
+				animation: fallingCats 12s linear infinite;
 			}
 
 			.cat-left {
@@ -76,7 +88,7 @@
 				top: -100px;
 				left: 20px;
 				width: 100px;
-				animation: fallingCats 5s linear infinite;
+				animation: fallingCats 7s linear infinite;
 			}
 
 			.cat-right {
@@ -84,15 +96,20 @@
 				top: -100px;
 				right: 20px;
 				width: 100px;
-				animation: fallingCats 6s linear infinite;
+				animation: fallingCats 8s linear infinite;
 			}
 		</style>
+
 	</head>
+
+
+
 	<body data-sveltekit-preload-data="hover">
 		<button id="toggle-button">Toggle Cats</button>
 		<img class="cat-left" src="https://static.vecteezy.com/system/resources/previews/008/846/790/original/cat-face-cute-free-download-transparent-image-illustration-clipart-animal-free-png.png">
 		<img class="cat-right" src="https://static.vecteezy.com/system/resources/previews/008/846/791/original/cat-face-cute-free-download-transparent-image-illustration-clipart-pet-wildlife-free-png.png">
 		<img class="cat-mid" src="https://static.vecteezy.com/system/resources/previews/018/871/797/original/happy-cat-transparent-background-png.png">
+		<img class="cat-right-mid" src="https://static.vecteezy.com/system/resources/previews/018/871/797/original/happy-cat-transparent-background-png.png">
 		<!-- Add more <img> elements with different cat images -->
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
@@ -100,7 +117,7 @@
 
 	<script>
     window.onload = function() {
-        var cats = document.querySelectorAll('.cat-left, .cat-right, .cat-mid');
+        var cats = document.querySelectorAll('.cat-left, .cat-right, .cat-mid, .cat-right-mid');
         cats.forEach(function(cat) {
             cat.style.animationPlayState = 'running'; // Explicitly set the animationPlayState to 'running'
         });
